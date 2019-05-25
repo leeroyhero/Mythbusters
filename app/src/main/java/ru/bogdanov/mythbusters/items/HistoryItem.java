@@ -10,7 +10,7 @@ public class HistoryItem {
 
     public HistoryItem(int threadCount, long secondsSpent) {
         this.threadCount = threadCount;
-        this.dateTime = new SimpleDateFormat("mm:HH:ss").format(new Date());
+        this.dateTime = new SimpleDateFormat("HH:mm:ss").format(new Date());
         this.secondsSpent = secondsSpent;
     }
 

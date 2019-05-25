@@ -35,8 +35,8 @@ public class HistoryRecyclerAdapter extends RecyclerView.Adapter<HistoryRecycler
     }
 
     public void addToList(HistoryItem historyItem){
-        list.add(0,historyItem);
-        notifyItemInserted(0);
+        list.add(historyItem);
+        notifyItemInserted(list.size()-1);
     }
 
     // Create new views (invoked by the layout manager)
