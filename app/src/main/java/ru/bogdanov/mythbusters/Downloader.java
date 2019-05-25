@@ -13,6 +13,7 @@ import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 import io.reactivex.Scheduler;
 import io.reactivex.Single;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 public class Downloader {
@@ -26,7 +27,9 @@ public class Downloader {
         List<Observable<Boolean>> completableList=getCompletableList(packOfUrlLists);
         return Observable.fromIterable(completableList)
                 .flatMap(task -> task.observeOn(Schedulers.io()))
-                .toList();
+                .toList()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
     }
 
     private List<Observable<Boolean>> getCompletableList(List<List<String>> packOfUrlLists) {
@@ -46,6 +49,7 @@ public class Downloader {
                 for (String url: urlList)
                 new FileSaver().downloadAndSave(url, context);
 
+                Log.d("urlStorage", "thread completed: "+emitter.hashCode());
                 emitter.onNext(true);
                 emitter.onComplete();
             }
