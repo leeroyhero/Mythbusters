@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonDownload;
     private RecyclerView recyclerView;
     private HistoryRecyclerAdapter recyclerAdapter;
+    private Button buttonClear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,9 @@ public class MainActivity extends AppCompatActivity {
         recyclerAdapter=new HistoryRecyclerAdapter();
         recyclerView.setAdapter(recyclerAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        buttonClear=findViewById(R.id.buttonClear);
 
+        buttonClear.setOnClickListener(v->{clearClicked();});
 
         buttonDownload.setOnClickListener(v->{downloadButtonClicked();});
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -59,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void clearClicked() {
+        recyclerAdapter.clearList();
     }
 
     private void downloadButtonClicked() {

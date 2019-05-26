@@ -51,6 +51,17 @@ public class UrlStorage {
         urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/RBhq5mYas2CYaJtXhkBYPDCD8yn3SObW9HS9u8i6.m4v");
         urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/Vej1pUBbYcYx3W3QPLrALCDjrPGEtsjqVm1RQWtd.m4v");
         urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/EGeougKGtUT16XrZhxynYIHH9G7VRwFZiAF4e6Iv.m4v");
+        urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/MZoQbiDGQMyWs3yf7hzGyM9s9ZYkkq7qdEMms1yP.m4v");
+        urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/yH9MOvPF4dtbWqhNnFOS9vwui0peGV3mvzqY9sO4.m4v");
+        urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/XFD4S25fIuVayzysCdcUHHYzeyuEHzi7X2hfiWOA.m4v");
+        urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/lifHdCWdLDgfZ6FOGVoJYcKWqQw1WWA1wfawpMG9.m4v");
+        urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/PQsk1eH8kK9KMMxsnMyJtfXseGL9RKqzGcvUn539.m4v");
+        urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/wWMGAJD1cyhimuXpcSu0zktI1WnCZKBDkfFeLNyo.m4v");
+        urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/3cDq9UzgIYfnTYBZrmN24oP50sLXFAMjDbLap0UG.m4v");
+        urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/ZVCsOY3a0xH2iraiTdDzFwEib7uSVtI0zgGSwrak.m4v");
+        urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/HjSvQ9XG3rA7wOaOdIiuWy7DmIgrFCckW26TSHsB.m4v");
+        urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/bIpAgX971SY4cBNyrOpKNAcCdaN9fNvQEOdgz6Gu.m4v");
+        urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/4TW15DnNHVHXfTMgqV8OH6bFwtnrZNwJtYGVGslL.m4v");
 
         return urlList;
     }

@@ -15,6 +15,11 @@ import ru.bogdanov.mythbusters.items.HistoryItem;
 public class HistoryRecyclerAdapter extends RecyclerView.Adapter<HistoryRecyclerAdapter.MyViewHolder> {
     private List<HistoryItem> list;
 
+    public void clearList() {
+        list.clear();
+        notifyDataSetChanged();
+    }
+
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case

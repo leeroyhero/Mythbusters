@@ -44,6 +44,8 @@ public class FileSaver {
                 fos.write(buffer, 0, length);
             }
 
+            is.close();
+
             Log.d("urlStorage",  "fileLoaded");
         } catch (MalformedURLException e) {
             e.printStackTrace();
