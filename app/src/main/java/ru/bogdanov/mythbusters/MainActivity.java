@@ -75,7 +75,10 @@ public class MainActivity extends AppCompatActivity {
         FileSaver.deleteFolder(this);
 
         long startTime= SystemClock.elapsedRealtime();
-        downloader.loadFiles(UrlStorage.getUrls(getThreadsCountFromSeekbar()))
+
+        UrlListManager urlListManager=new UrlListManager(UrlStorage.getParentUrlList());
+
+        downloader.loadFiles(urlListManager, getThreadsCountFromSeekbar())
                 .subscribe(new SingleObserver<List<Boolean>>() {
                     @Override
                     public void onSubscribe(Disposable d) {

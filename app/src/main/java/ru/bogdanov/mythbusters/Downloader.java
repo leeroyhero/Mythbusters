@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import io.reactivex.Completable;
+import io.reactivex.FlowableOnSubscribe;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -23,8 +24,8 @@ public class Downloader {
         this.context = context;
     }
 
-    public Single<List<Boolean>> loadFiles(final List<List<String>> packOfUrlLists){
-        List<Observable<Boolean>> completableList=getCompletableList(packOfUrlLists);
+    public Single<List<Boolean>> loadFiles(UrlListManager urlListManager, int threadsCount){
+        List<Observable<Boolean>> completableList=getCompletableList(urlListManager, threadsCount);
         return Observable.fromIterable(completableList)
                 .flatMap(task -> task.observeOn(Schedulers.io()))
                 .toList()
@@ -32,21 +33,22 @@ public class Downloader {
                 .observeOn(AndroidSchedulers.mainThread());
     }
 
-    private List<Observable<Boolean>> getCompletableList(List<List<String>> packOfUrlLists) {
+    private List<Observable<Boolean>> getCompletableList(UrlListManager urlListManager, int threadsCount) {
         List<Observable<Boolean>> list=new ArrayList<>();
-        for (List<String> urlList: packOfUrlLists)
-            list.add(getObservableOfLoaders(urlList)
+        for (int i=0;i<threadsCount;i++)
+            list.add(getObservableOfLoaders(urlListManager)
             .subscribeOn(Schedulers.io()));
 
         return list;
     }
 
-    private Observable<Boolean> getObservableOfLoaders(List<String> urlList){
+    private Observable<Boolean> getObservableOfLoaders(UrlListManager urlList){
         return Observable.create(new ObservableOnSubscribe<Boolean>() {
             @Override
             public void subscribe(ObservableEmitter<Boolean> emitter) throws Exception {
                 Log.d("urlStorage", "thread started");
-                for (String url: urlList)
+                String url;
+                while ((url=urlList.getUrl())!=null)
                 new FileSaver().downloadAndSave(url, context);
 
                 Log.d("urlStorage", "thread completed: "+emitter.hashCode());
@@ -55,6 +57,5 @@ public class Downloader {
             }
         });
     }
-
 
 }

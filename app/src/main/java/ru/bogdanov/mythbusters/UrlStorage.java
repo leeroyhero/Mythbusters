@@ -32,7 +32,8 @@ public class UrlStorage {
         return list;
     }
 
-    private static List<String> getParentUrlList(){
+
+    public static List<String> getParentUrlList(){
         List<String> urlList=new ArrayList<>();
         urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/ZSt24JyqAjfc5dFyE05TRF4JmDWbJSg0PZ1WWbeM.m4v");
         urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/hriXJNcVsMvSNPVKWlfzfwHze03yzJ6gE0ARpaTu.m4v");
@@ -62,6 +63,8 @@ public class UrlStorage {
         urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/HjSvQ9XG3rA7wOaOdIiuWy7DmIgrFCckW26TSHsB.m4v");
         urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/bIpAgX971SY4cBNyrOpKNAcCdaN9fNvQEOdgz6Gu.m4v");
         urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/4TW15DnNHVHXfTMgqV8OH6bFwtnrZNwJtYGVGslL.m4v");
+        urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/ZSt24JyqAjfc5dFyE05TRF4JmDWbJSg0PZ1WWbeM.m4v");
+        urlList.add("https://api.bs-go.ru/storage/videos/exercises/video/699hY2miUiCHB2eL89JVBBKZQcnNs6bJ07ltLxVk.m4v");
 
         return urlList;
     }

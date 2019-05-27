@@ -46,7 +46,7 @@ public class FileSaver {
 
             is.close();
 
-            Log.d("urlStorage",  "fileLoaded");
+            Log.d("urlStorage",  "fileLoaded thread:" + Thread.currentThread().getId());
         } catch (MalformedURLException e) {
             e.printStackTrace();
             Log.d("urlStorage",  e.getMessage());
